@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A9F51C3F211070AF00A3CC47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F51C3E211070AF00A3CC47 /* AppDelegate.swift */; };
-		A9F51C41211070AF00A3CC47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F51C40211070AF00A3CC47 /* ViewController.swift */; };
+		A9F51C41211070AF00A3CC47 /* FontVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F51C40211070AF00A3CC47 /* FontVC.swift */; };
 		A9F51C44211070AF00A3CC47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F51C42211070AF00A3CC47 /* Main.storyboard */; };
 		A9F51C46211070B300A3CC47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F51C45211070B300A3CC47 /* Assets.xcassets */; };
 		A9F51C49211070B300A3CC47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9F51C47211070B300A3CC47 /* LaunchScreen.storyboard */; };
+		A9F51C552110803900A3CC47 /* FontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F51C542110803900A3CC47 /* FontCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A9F51C3B211070AF00A3CC47 /* UICollectionViewTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionViewTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F51C3E211070AF00A3CC47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A9F51C40211070AF00A3CC47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A9F51C40211070AF00A3CC47 /* FontVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontVC.swift; sourceTree = "<group>"; };
 		A9F51C43211070AF00A3CC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9F51C45211070B300A3CC47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9F51C48211070B300A3CC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9F51C4A211070B300A3CC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9F51C542110803900A3CC47 /* FontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,38 @@
 			isa = PBXGroup;
 			children = (
 				A9F51C3E211070AF00A3CC47 /* AppDelegate.swift */,
-				A9F51C40211070AF00A3CC47 /* ViewController.swift */,
 				A9F51C42211070AF00A3CC47 /* Main.storyboard */,
 				A9F51C45211070B300A3CC47 /* Assets.xcassets */,
+				A9F51C53211075AB00A3CC47 /* Model */,
+				A9F51C52211075A400A3CC47 /* View */,
+				A9F51C502110758A00A3CC47 /* Controller */,
 				A9F51C47211070B300A3CC47 /* LaunchScreen.storyboard */,
 				A9F51C4A211070B300A3CC47 /* Info.plist */,
 			);
 			path = UICollectionViewTask;
+			sourceTree = "<group>";
+		};
+		A9F51C502110758A00A3CC47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9F51C40211070AF00A3CC47 /* FontVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A9F51C52211075A400A3CC47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9F51C542110803900A3CC47 /* FontCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9F51C53211075AB00A3CC47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F51C41211070AF00A3CC47 /* ViewController.swift in Sources */,
+				A9F51C552110803900A3CC47 /* FontCell.swift in Sources */,
+				A9F51C41211070AF00A3CC47 /* FontVC.swift in Sources */,
 				A9F51C3F211070AF00A3CC47 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KKi.UICollectionViewTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KKi.UICollectionViewTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

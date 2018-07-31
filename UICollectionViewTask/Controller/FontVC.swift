@@ -8,17 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FontVC: UIViewController {
+
+    @IBOutlet weak var fontCollectionView: UICollectionView!
+    
+    var fonts = UIFont.fontNames
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print(fonts)
+        
+//        for familyName in UIFont.familyNames {
+//            print(UIFont.familyNames)
+//        }
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
