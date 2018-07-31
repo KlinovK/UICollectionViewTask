@@ -13,5 +13,8 @@ class FontCell: UICollectionViewCell {
     @IBOutlet weak var fontTitle: UILabel!
     @IBOutlet weak var fontDescription: UILabel!
     
-    
+    func updateViews(font: Fonts)  {
+        fontTitle.text = font.title
+        fontDescription.text = font.description
+    }
 }
