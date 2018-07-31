@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FontVC.swift
 //  UICollectionViewTask
 //
 //  Created by Константин Клинов on 7/31/18.
@@ -8,34 +8,32 @@
 
 import UIKit
 
-class FontVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-  
-    
+class FontVC: UIViewController {
 
-    @IBOutlet weak var fontCollectionView: UICollectionView!
+    var font: Fonts?
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fontCollectionView.dataSource = self
-        fontCollectionView.delegate = self
-        print(UIFont.familyNames)
-    }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataService.instance.getFonts().count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FontCell", for: indexPath) as? FontCell {
-            let font = DataService.instance.getFonts()[indexPath.row]
-            cell.updateViews(font: font)
-            return cell
-        } else {
-          return  FontCell()
-        }
+    func initData(forGroup font: Fonts){
+        self.font = font
         
     }
+    
+    @IBOutlet weak var fontTitle: UILabel!
+    @IBOutlet weak var fontDescription: UILabel!
+    @IBOutlet weak var fontExample: UILabel?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        fontTitle.text = font?.title
+        fontDescription.text = font?.description
+    }
+    
+    
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
-
