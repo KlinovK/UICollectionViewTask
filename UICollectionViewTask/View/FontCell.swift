@@ -7,14 +7,17 @@
 //
 
 import UIKit
-
+//
 class FontCell: UICollectionViewCell {
-    
+//    
     @IBOutlet weak var fontTitle: UILabel!
     @IBOutlet weak var fontDescription: UILabel!
-    
-    func updateViews(font: Fonts)  {
-        fontTitle.text = font.title
-        fontDescription.text = font.description
+
+//
+//   
+//    
+//    func updateViews(font: Fonts1)  {
+//        fontTitle.text = font.familyNames as? String
+//        fontDescription.text = font.weight as? String
     }
-}
+//}
