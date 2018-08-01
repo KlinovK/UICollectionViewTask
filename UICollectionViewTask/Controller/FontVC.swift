@@ -10,10 +10,11 @@ import UIKit
 
 class FontVC: UIViewController {
 
-//    var font: Fonts1?
+ var font : String = ""
+    var weight : String = ""
 //
 //
-//    func initData(forGroup font: Fonts1){
+//    func initData(forGroup font: ){
 //        self.font = font
 //
 //   }
@@ -27,8 +28,10 @@ class FontVC: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-//       fontTitle.text = font?.familyNames as? String
-//    fontDescription.text = font?.weight as? String
+
+     fontTitle.text = font
+
+        fontDescription.text = weight
     }
     
     
