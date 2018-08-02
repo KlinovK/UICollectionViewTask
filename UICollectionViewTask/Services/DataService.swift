@@ -6,24 +6,53 @@
 //  Copyright © 2018 Константин Клинов. All rights reserved.
 //
 
-//import Foundation
-//import UIKit
-//
-//
-//class DataService {
-//    static let instance = DataService()
-//
-//
-//    private let fonts =
-//        Fonts1(familyNames: UIFont.familyNames as AnyObject , weight: UIFont.Weight.self as AnyObject)
-//
-//
-//
-//   func getFonts() -> [Fonts1] {
-//    return [fonts]
-//
-//    }
-//}
+import Foundation
+import UIKit
+
+
+class DataService {
+    
+    // MARK: singleton pattern
+
+    static let instance = DataService()
+
+    // MARK: init variables
+
+    var fonts = [String]()
+    var weightNames = [String]()
+    var realFonts = [String]()
+   
+    // MARK: get fonts and weights
+    
+    init() {
+    
+        for font in UIFont.familyNames {
+            let processed = font.replacingOccurrences(of: " ", with: "")
+            for fontsWithWidth in UIFont.fontNames(forFamilyName: font) {
+            if fontsWithWidth.range(of: processed) != nil {
+                var weight = ""
+                if fontsWithWidth == font {
+                    weight = "Basic"
+                } else {
+                    weight = fontsWithWidth.replacingOccurrences(of: "\(processed)-", with: "")
+                }
+    fonts.append(font)
+    realFonts.append(fontsWithWidth)
+    weightNames.append(weight)
+    
+    print(font)
+    print(weight)
+   
+                }
+  
+            }
+  
+        }
+  
+    }
+
+    }
+
 
 
 

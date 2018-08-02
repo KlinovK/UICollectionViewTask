@@ -7,17 +7,19 @@
 //
 
 import UIKit
-//
+
 class FontCell: UICollectionViewCell {
-//    
+   
+    // MARK: Outlets
+    
     @IBOutlet weak var fontTitle: UILabel!
     @IBOutlet weak var fontDescription: UILabel!
 
-//
-//   
-//    
-//    func updateViews(font: Fonts1)  {
-//        fontTitle.text = font.familyNames as? String
-//        fontDescription.text = font.weight as? String
+    // MARK: Added border for cell
+    
+    override func awakeFromNib() {
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1.0
+        }
     }
-//}
+
