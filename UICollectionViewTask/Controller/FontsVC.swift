@@ -10,22 +10,49 @@ import UIKit
 
 class FontsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
-    
 
     @IBOutlet weak var fontCollectionView: UICollectionView!
     
     var fonts = [String]()
-    
+    var weightNames = [String]()
+    var realFonts = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fontCollectionView.dataSource = self
         fontCollectionView.delegate = self
-        
-        fonts = UIFont.familyNames
 
-       
+       for font in UIFont.familyNames {
+            let processed = font.replacingOccurrences(of: " ", with: "")
+            for fontsWithWidth in UIFont.fontNames(forFamilyName: font)
+            {
+                if fontsWithWidth.range(of: processed) != nil {
+                    var weight = ""
+                    if fontsWithWidth == font {
+                        weight = "Basic"
+                    } else {
+                        weight = fontsWithWidth.replacingOccurrences(of: "\(processed)-", with: "")
+                    }
+                    fonts.append(font)
+                    realFonts.append(fontsWithWidth)
+                    weightNames.append(weight)
+                    
+                    print(font)
+                    print(weight)
+                    print()
+                }
+            }
+        }
     }
+    
+    
+//        fonts.forEach({ familyName in
+//            let weight = UIFont.fontNames(forFamilyName: familyName)
+//            print(weight)
+//        })
+////        weight = UIFont.description()
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fonts.count
@@ -34,25 +61,27 @@ class FontsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FontCell", for: indexPath) as? FontCell {
+            let fontName = fonts[indexPath.row]
+            let font = realFonts[indexPath.row]
+            let weightName =  weightNames[indexPath.row]
             
-            cell.fontTitle.text = fonts[indexPath.row]
+            cell.fontTitle.text = fontName
+            cell.fontTitle.font = UIFont(name: font, size: 20)
+            
+            cell.fontDescription.text = weightName
             
             return cell
-//            let font = DataService.instance.getFonts()[indexPath.row]
-//            cell.updateViews(font: font)
-//            return cell
-//        } else {
-//          return  FontCell()
-//        }
         } else {
             return FontCell()
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let font = fonts[indexPath.row]
         guard let FontVC = storyboard?.instantiateViewController(withIdentifier: "GoToFontVC") as? FontVC else { return }
-        FontVC.font = font
+        FontVC.font = fonts[indexPath.row]
+        FontVC.weight = weightNames[indexPath.row]
+        FontVC.realFont = realFonts[indexPath.row]
+        
         presentDetail(FontVC)
     }
 
@@ -70,4 +99,4 @@ class FontsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
 
 
 
-}
+        }
