@@ -15,12 +15,14 @@ class FontVC: UIViewController {
     @IBOutlet weak var fontTitle: UILabel!
     @IBOutlet weak var fontDescription: UILabel!
     @IBOutlet weak var fontExample: UILabel!
+    @IBOutlet weak var sizeLbl: UILabel!
     
     // MARK: variables
     
     var font : String = ""
     var weight : String = ""
     var realFont : String = ""
+    var sizeOffont = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,13 @@ class FontVC: UIViewController {
      
         fontTitle.text = font
         fontDescription.text = weight
+        
+          // MARK: use realFonts for text examle
+        
         fontExample.text = "Example"
         fontExample.font = UIFont(name: realFont, size: 20)
+        sizeLbl.text = "\(20)pt"
+    
     }
     
     // MARK:  Back to mainView

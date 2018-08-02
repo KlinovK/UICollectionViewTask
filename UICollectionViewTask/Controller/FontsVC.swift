@@ -27,16 +27,25 @@ class FontsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     // MARK: pass data to collectionviewCell
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return   DataService.instance.fonts.count
+       
+        // MARK: Set number of items
+        
+        return   DataService.instance.fonts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FontCell", for: indexPath) as? FontCell {
+          
+            // MARK: Diplay in cells our ronts
+            
             let fontName = DataService.instance.fonts[indexPath.row]
             let font = DataService.instance.realFonts[indexPath.row]
             let weightName = DataService.instance.weightNames[indexPath.row]
             
             cell.fontTitle.text = fontName
+            
+            // MARK: use realFonts for fontTitle
+            
             cell.fontTitle.font = UIFont(name: font, size: 20)
             cell.fontDescription.text = weightName
             
@@ -50,6 +59,9 @@ class FontsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let FontVC = storyboard?.instantiateViewController(withIdentifier: "GoToFontVC") as? FontVC else { return }
+    
+        // MARK: Pass data to FontVC
+        
         FontVC.font = DataService.instance.fonts[indexPath.row]
         FontVC.weight = DataService.instance.weightNames[indexPath.row]
         FontVC.realFont = DataService.instance.realFonts[indexPath.row]

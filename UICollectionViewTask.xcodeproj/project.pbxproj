@@ -43,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A996CE8F211341270034988D /* Exts */ = {
+			isa = PBXGroup;
+			children = (
+				A996CE882110D74C0034988D /* Ext.swift */,
+			);
+			name = Exts;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		A9F51C32211070AF00A3CC47 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				A9F51C582110860D00A3CC47 /* Services */,
-				A9F51C3E211070AF00A3CC47 /* AppDelegate.swift */,
-				A9F51C42211070AF00A3CC47 /* Main.storyboard */,
-				A996CE882110D74C0034988D /* Ext.swift */,
-				A9F51C45211070B300A3CC47 /* Assets.xcassets */,
+				A996CE8F211341270034988D /* Exts */,
 				A9F51C52211075A400A3CC47 /* View */,
 				A9F51C502110758A00A3CC47 /* Controller */,
+				A9F51C42211070AF00A3CC47 /* Main.storyboard */,
+				A9F51C3E211070AF00A3CC47 /* AppDelegate.swift */,
+				A9F51C45211070B300A3CC47 /* Assets.xcassets */,
 				A9F51C47211070B300A3CC47 /* LaunchScreen.storyboard */,
 				A9F51C4A211070B300A3CC47 /* Info.plist */,
 			);
