@@ -54,9 +54,13 @@ class FontsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         FontVC.weight = DataService.instance.weightNames[indexPath.row]
         FontVC.realFont = DataService.instance.realFonts[indexPath.row]
         
-        // MARK: custom animation of segue
+        //MARK: simple animation
         
-        presentDetail(FontVC)
+         //  present(FontVC, animated: true, completion: nil)
+        
+        // MARK: custom animation of segue
+     
+       presentDetail(FontVC)
     }
 
     // MARK: autolayout for cell

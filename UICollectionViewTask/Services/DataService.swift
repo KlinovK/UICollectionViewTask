@@ -27,6 +27,9 @@ class DataService {
     init() {
     
         for font in UIFont.familyNames {
+            
+            // MARK:    Returns a new string in which all occurrences of a target string in the receiver are replaced by another given string.
+            
             let processed = font.replacingOccurrences(of: " ", with: "")
             for fontsWithWidth in UIFont.fontNames(forFamilyName: font) {
             if fontsWithWidth.range(of: processed) != nil {

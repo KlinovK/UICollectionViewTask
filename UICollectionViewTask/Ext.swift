@@ -10,6 +10,9 @@ import UIKit
 
 
 extension UIViewController {
+    
+    // MARK: Present detail custom animation
+    
     func presentDetail(_ viewControlletToPresent: UIViewController){
         let transition = CATransition()
         transition.duration = 0.3
@@ -19,6 +22,8 @@ extension UIViewController {
         
         present(viewControlletToPresent, animated: false, completion: nil)
     }
+    
+    // MARK: Animation for dismiss action
     
     func dismissDetail(_ viewControlletToPresent: UIViewController){
         let transition = CATransition()
