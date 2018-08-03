@@ -39,7 +39,7 @@ class FontVC: UIViewController {
         
         fontExample.text = "Example"
         fontExample.font = UIFont(name: realFont, size: 20)
-        sizeLbl.text = "\(20)pt"
+        sizeLbl.text = " : \(20)pt"
     
     }
     

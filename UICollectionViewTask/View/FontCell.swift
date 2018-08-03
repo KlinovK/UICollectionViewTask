@@ -18,7 +18,7 @@ class FontCell: UICollectionViewCell {
     // MARK: Added border for cell
     
     override func awakeFromNib() {
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.blue.cgColor
         self.layer.borderWidth = 1.0
         }
     }
